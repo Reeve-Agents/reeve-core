@@ -1,0 +1,28 @@
+{
+  "name": "@reeve/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./simview": "./src/simview.ts",
+    "./packs": "./src/packs/index.ts",
+    "./revision": "./src/revision.ts",
+    "./fixtures-dir": "./src/fixtures-dir.ts",
+    "./fixtures/*": "./fixtures/*"
+  },
+  "description": "Shared domain model: rulebook schemas, domain packs, simulation views and the sample businesses.",
+  "repository": "github:Reeve-Agents/reeve-core",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

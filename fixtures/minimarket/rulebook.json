@@ -1,0 +1,26 @@
+{
+  "pack": "minimarket",
+  "business_name": "Minimarket Berkah",
+  "currency": "IDR",
+  "cards": [
+    { "id": "M1", "kind": "rule", "type": "reorder_point", "title": "Stok (rak + pesanan) di bawah 20 → pesan ke Supplier A sampai 60", "source_quote": "Kalau stok barang (yang di rak ditambah yang sudah dipesan) di bawah 20, pesan ke Supplier A sampai jadi 60.", "below_units": 20, "order_up_to_units": 60, "supplier": "A" },
+    { "id": "M2", "kind": "rule", "type": "supplier_fallback", "title": "Supplier A telat 3 hari → batalkan, pesan ke Supplier B", "source_quote": "Kalau Supplier A telat 3 hari dari jadwal kirim, batalkan dan pesan ke Supplier B.", "late_days": 3, "backup_supplier": "B" },
+    { "id": "M3", "kind": "rule", "type": "expiry_markdown", "title": "Diskon 20% pada H-30 sebelum kedaluwarsa", "source_quote": "H-30 sebelum kedaluwarsa, kasih diskon 20%.", "days_before_expiry": 30, "percent": 20 },
+    { "id": "M4", "kind": "rule", "type": "expiry_markdown", "title": "Diskon 50% pada H-14 sebelum kedaluwarsa", "source_quote": "H-14 sebelum kedaluwarsa, diskon jadi 50%.", "days_before_expiry": 14, "percent": 50 },
+    { "id": "M5", "kind": "constraint", "type": "markdown_floor", "title": "Harga diskon tidak boleh di bawah harga modal", "source_quote": "Diskon tidak boleh bikin harga jual di bawah harga modal.", "floor": "cost" },
+    { "id": "M6", "kind": "rule", "type": "slow_mover_stop", "title": "Tidak laku 14 hari → berhenti pesan ulang", "source_quote": "Barang yang tidak laku 14 hari, jangan dipesan lagi.", "no_sale_days": 14 },
+    { "id": "M7", "kind": "constraint", "type": "po_approval_threshold", "title": "PO di atas Rp2.000.000 wajib persetujuan pemilik", "source_quote": "PO di atas Rp2.000.000 harus saya setujui dulu.", "po_above": 2000000 },
+    { "id": "M8", "kind": "kpi", "type": "expiring_value_limit", "title": "Nilai barang kedaluwarsa ≤30 hari maksimal Rp1.000.000, dicek tiap Senin", "source_quote": "Nilai barang yang akan kedaluwarsa dalam 30 hari ke depan tidak boleh lebih dari Rp1.000.000; cek tiap Senin dan kabari saya.", "max_value": 1000000, "window_days": 30, "check_weekday": 0 }
+  ],
+  "questions": [
+    "Batas 20 dan target 60 berlaku untuk semua barang, atau barang cepat laku (mi, air mineral) perlu batas sendiri?",
+    "PO yang menunggu persetujuan Anda: boleh dipesan sebagian dulu supaya rak tidak kosong?",
+    "Barang yang sudah kedaluwarsa dibuang, atau diretur ke supplier?",
+    "Nilai 'akan kedaluwarsa' dihitung dengan harga modal atau harga jual?"
+  ],
+  "assumptions": [
+    "Stok dihitung per barang: yang di rak ditambah yang sudah dipesan tapi belum datang.",
+    "Barang dijual dari tanggal kedaluwarsa paling dekat dulu (FEFO).",
+    "Nilai barang yang akan kedaluwarsa dihitung dengan harga modal."
+  ]
+}

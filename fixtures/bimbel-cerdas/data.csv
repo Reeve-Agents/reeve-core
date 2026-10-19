@@ -1,0 +1,13 @@
+id,name,parent_phone,email,fee,due_date,status,sessions_left,active,telegram_chat_id
+S01,Alya,+6281200000001,ortu.alya@example.com,850000,2026-11-03,belum,8,aktif,900000001
+S02,Bima,+6281200000002,ortu.bima@example.com,850000,2026-11-05,lunas,6,aktif,900000002
+S03,Citra,+6281200000003,ortu.citra@example.com,1200000,2026-11-04,belum,1,aktif,900000003
+S04,Dimas,+6281200000004,ortu.dimas@example.com,2500000,2026-11-06,belum,10,aktif,900000004
+S05,Eka,+6281200000005,ortu.eka@example.com,850000,2026-10-25,belum,4,aktif,900000005
+S06,Fajar,+6281200000006,ortu.fajar@example.com,850000,2026-11-12,belum,0,aktif,900000006
+S07,Gita,+6281200000007,ortu.gita@example.com,1200000,2026-11-15,belum,5,berhenti,900000007
+S08,Hana,+6281200000008,ortu.hana@example.com,850000,2026-11-20,lunas,3,aktif,900000008
+S09,Irfan,+6281200000009,ortu.irfan@example.com,1200000,2026-10-28,belum,7,aktif,900000009
+S10,Jihan,+6281200000010,ortu.jihan@example.com,850000,2026-11-09,belum,2,aktif,900000010
+S11,Kevin,+6281200000011,ortu.kevin@example.com,3000000,2026-11-02,belum,12,aktif,900000011
+S12,Laras,+6281200000012,ortu.laras@example.com,850000,2026-11-18,belum,9,aktif,900000012

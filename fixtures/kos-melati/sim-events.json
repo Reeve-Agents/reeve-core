@@ -1,0 +1,1292 @@
+{
+"run_id": "run_mvdetcvcug1b",
+"source": "CreateOS run on 2026-10-18, Kos Melati scenario (30 rooms, 45 days)",
+"summary": {
+"invoiced": 90000000,
+"collected": 72400000,
+"fees": 1275000,
+"credits": 250000,
+"refund_requests": 0,
+"kpi_alerts": 2
+},
+"events": [
+{
+"date": "2026-11-01",
+"tenant_id": "K01",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K01-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K02",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K02-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K03",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K03-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K04",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K04-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K05",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K05-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K06",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K06-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K07",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K07-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K08",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K08-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K09",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K09-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K10",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K10-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K11",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K11-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K12",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K12-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K13",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K13-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K14",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K14-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K15",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K15-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K16",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K16-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K17",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K17-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K18",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K18-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K19",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K19-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K20",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K20-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K21",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K21-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K22",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K22-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K23",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K23-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K24",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K24-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K25",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K25-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K26",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K26-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K27",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K27-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K28",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K28-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K29",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K29-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K30",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K30-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K01",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K01-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K02",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K02-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K03",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K03-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K04",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K04-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K05",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K05-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K06",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K06-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K07",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K07-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K08",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K08-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K09",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K09-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K10",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K10-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K11",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K11-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K12",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K12-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K13",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K13-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K14",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K14-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K15",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K15-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K16",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K16-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K17",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K17-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K18",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K18-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K28",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K28-2026-11"
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K28",
+"type": "credit",
+"amount": 250000
+},
+{
+"date": "2026-11-01",
+"tenant_id": "K30",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K30-2026-11"
+},
+{
+"date": "2026-11-03",
+"tenant_id": "K26",
+"type": "payment",
+"amount": 750000,
+"invoice_id": "K26-2026-11"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K19",
+"type": "reminder",
+"invoice_id": "K19-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K20",
+"type": "reminder",
+"invoice_id": "K20-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K21",
+"type": "reminder",
+"invoice_id": "K21-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K22",
+"type": "reminder",
+"invoice_id": "K22-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K23",
+"type": "reminder",
+"invoice_id": "K23-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K24",
+"type": "reminder",
+"invoice_id": "K24-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K25",
+"type": "reminder",
+"invoice_id": "K25-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K26",
+"type": "reminder",
+"invoice_id": "K26-2026-11",
+"amount": 750000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K27",
+"type": "reminder",
+"invoice_id": "K27-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-04",
+"tenant_id": "K29",
+"type": "reminder",
+"invoice_id": "K29-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-06",
+"tenant_id": "K19",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K19-2026-11"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "K20",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K20-2026-11"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "K21",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K21-2026-11"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "K22",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K22-2026-11"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "K23",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K23-2026-11"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "K26",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K26-2026-11"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "K27",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K27-2026-11"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "K29",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K29-2026-11"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "K22",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K22-2026-11"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "K23",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K23-2026-11"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "K24",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K24-2026-11"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K22",
+"type": "reminder",
+"invoice_id": "K22-2026-11",
+"amount": 75000
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K23",
+"type": "reminder",
+"invoice_id": "K23-2026-11",
+"amount": 75000
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K25",
+"type": "reminder",
+"invoice_id": "K25-2026-11",
+"amount": 1500000
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K25",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K25-2026-11"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K26",
+"type": "reminder",
+"invoice_id": "K26-2026-11",
+"amount": 825000
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K27",
+"type": "reminder",
+"invoice_id": "K27-2026-11",
+"amount": 1575000
+},
+{
+"date": "2026-11-11",
+"tenant_id": "K29",
+"type": "reminder",
+"invoice_id": "K29-2026-11",
+"amount": 1575000
+},
+{
+"date": "2026-11-13",
+"tenant_id": "K25",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K25-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K22",
+"type": "notice",
+"invoice_id": "K22-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K23",
+"type": "notice",
+"invoice_id": "K23-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K25",
+"type": "notice",
+"invoice_id": "K25-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K26",
+"type": "notice",
+"invoice_id": "K26-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K27",
+"type": "notice",
+"invoice_id": "K27-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "K29",
+"type": "notice",
+"invoice_id": "K29-2026-11"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "-",
+"type": "kpi_alert",
+"amount": 41500000,
+"note": "2026-11"
+},
+{
+"date": "2026-11-17",
+"tenant_id": "K29",
+"type": "payment",
+"amount": 1575000,
+"invoice_id": "K29-2026-11"
+},
+{
+"date": "2026-11-21",
+"tenant_id": "K26",
+"type": "payment",
+"amount": 825000,
+"invoice_id": "K26-2026-11"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K01",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K01-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K02",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K02-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K03",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K03-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K04",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K04-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K05",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K05-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K06",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K06-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K07",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K07-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K08",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K08-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K09",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K09-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K10",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K10-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K11",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K11-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K12",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K12-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K13",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K13-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K14",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K14-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K15",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K15-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K16",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K16-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K17",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K17-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K18",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K18-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K19",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K19-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K20",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K20-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K21",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K21-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K22",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K22-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K23",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K23-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K24",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K24-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K25",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K25-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K26",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K26-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K27",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K27-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K28",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K28-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K28",
+"type": "payment",
+"amount": 250000,
+"invoice_id": "K28-2026-12",
+"note": "applied credit"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K29",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K29-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K30",
+"type": "invoice",
+"amount": 1500000,
+"invoice_id": "K30-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K01",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K01-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K02",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K02-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K03",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K03-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K04",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K04-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K05",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K05-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K06",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K06-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K07",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K07-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K08",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K08-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K09",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K09-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K10",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K10-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K11",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K11-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K12",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K12-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K13",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K13-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K14",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K14-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K15",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K15-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K16",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K16-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K17",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K17-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K18",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K18-2026-12"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "K30",
+"type": "payment",
+"amount": 1500000,
+"invoice_id": "K30-2026-12"
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K19",
+"type": "reminder",
+"invoice_id": "K19-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K20",
+"type": "reminder",
+"invoice_id": "K20-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K21",
+"type": "reminder",
+"invoice_id": "K21-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K22",
+"type": "reminder",
+"invoice_id": "K22-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K23",
+"type": "reminder",
+"invoice_id": "K23-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K24",
+"type": "reminder",
+"invoice_id": "K24-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K25",
+"type": "reminder",
+"invoice_id": "K25-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K26",
+"type": "reminder",
+"invoice_id": "K26-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K27",
+"type": "reminder",
+"invoice_id": "K27-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K28",
+"type": "reminder",
+"invoice_id": "K28-2026-12",
+"amount": 1250000
+},
+{
+"date": "2026-12-04",
+"tenant_id": "K29",
+"type": "reminder",
+"invoice_id": "K29-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K19",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K19-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K20",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K20-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K21",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K21-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K22",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K22-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K23",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K23-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K26",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K26-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K27",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K27-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K28",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K28-2026-12"
+},
+{
+"date": "2026-12-08",
+"tenant_id": "K29",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K29-2026-12"
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K19",
+"type": "reminder",
+"invoice_id": "K19-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K20",
+"type": "reminder",
+"invoice_id": "K20-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K21",
+"type": "reminder",
+"invoice_id": "K21-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K22",
+"type": "reminder",
+"invoice_id": "K22-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K23",
+"type": "reminder",
+"invoice_id": "K23-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K24",
+"type": "reminder",
+"invoice_id": "K24-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K24",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K24-2026-12"
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K25",
+"type": "reminder",
+"invoice_id": "K25-2026-12",
+"amount": 1500000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K25",
+"type": "late_fee",
+"amount": 75000,
+"invoice_id": "K25-2026-12"
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K26",
+"type": "reminder",
+"invoice_id": "K26-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K27",
+"type": "reminder",
+"invoice_id": "K27-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K28",
+"type": "reminder",
+"invoice_id": "K28-2026-12",
+"amount": 1325000
+},
+{
+"date": "2026-12-11",
+"tenant_id": "K29",
+"type": "reminder",
+"invoice_id": "K29-2026-12",
+"amount": 1575000
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K19",
+"type": "notice",
+"invoice_id": "K19-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K20",
+"type": "notice",
+"invoice_id": "K20-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K21",
+"type": "notice",
+"invoice_id": "K21-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K22",
+"type": "notice",
+"invoice_id": "K22-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K23",
+"type": "notice",
+"invoice_id": "K23-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K24",
+"type": "notice",
+"invoice_id": "K24-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K25",
+"type": "notice",
+"invoice_id": "K25-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K26",
+"type": "notice",
+"invoice_id": "K26-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K27",
+"type": "notice",
+"invoice_id": "K27-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K28",
+"type": "notice",
+"invoice_id": "K28-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "K29",
+"type": "notice",
+"invoice_id": "K29-2026-12"
+},
+{
+"date": "2026-12-15",
+"tenant_id": "-",
+"type": "kpi_alert",
+"amount": 28500000,
+"note": "2026-12"
+}
+]
+}

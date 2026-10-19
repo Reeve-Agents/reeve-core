@@ -1,0 +1,1963 @@
+{
+"run_id": "smvdjl83a-1",
+"receipt": "5d1fba6fd6fff3e1de3072b33cf7d8cf0ece04a394aeb375b096c629b15d05dd",
+"source": "CreateOS run on 2026-10-18, Minimarket Berkah scenario (24 items, 30 days, two suppliers)",
+"summary": {
+"sales": 9871200,
+"purchase_orders": 38,
+"purchase_value": 12926500,
+"approval_requests": 1,
+"supplier_switches": 4,
+"markdowns": 8,
+"writeoff_value": 64800,
+"stockouts": 23,
+"kpi_alerts": 1
+},
+"events": [
+{
+"date": "2026-11-02",
+"tenant_id": "-",
+"type": "sales",
+"amount": 315200,
+"note": "30 units"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S03",
+"type": "markdown",
+"amount": 16500,
+"note": "20% off, H-26"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S20",
+"type": "markdown",
+"amount": 10800,
+"note": "20% off, H-18"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S03",
+"type": "po_created",
+"amount": 726000,
+"note": "A:44"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S09",
+"type": "po_approval_request",
+"amount": 3038000,
+"note": "A:49"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S20",
+"type": "po_created",
+"amount": 486000,
+"note": "A:45"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S22",
+"type": "reorder_stopped"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S23",
+"type": "reorder_stopped"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S01",
+"type": "status",
+"amount": 40,
+"note": "ok",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S02",
+"type": "status",
+"amount": 27,
+"note": "ok",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S03",
+"type": "status",
+"amount": 16,
+"note": "marked_down",
+"label": "Susu UHT Full Cream 1L"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S04",
+"type": "status",
+"amount": 34,
+"note": "ok",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S05",
+"type": "status",
+"amount": 50,
+"note": "ok",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S06",
+"type": "status",
+"amount": 40,
+"note": "ok",
+"label": "Kopi Sachet 10s"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S07",
+"type": "status",
+"amount": 24,
+"note": "ok",
+"label": "Gula Pasir 1kg"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S08",
+"type": "status",
+"amount": 21,
+"note": "ok",
+"label": "Minyak Goreng 2L"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S09",
+"type": "status",
+"amount": 11,
+"note": "low",
+"label": "Beras 5kg"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S10",
+"type": "status",
+"amount": 20,
+"note": "ok",
+"label": "Kecap Manis 520ml"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S11",
+"type": "status",
+"amount": 22,
+"note": "ok",
+"label": "Saus Sambal 335ml"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S12",
+"type": "status",
+"amount": 26,
+"note": "ok",
+"label": "Sarden Kaleng 425g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S13",
+"type": "status",
+"amount": 27,
+"note": "ok",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S14",
+"type": "status",
+"amount": 33,
+"note": "ok",
+"label": "Wafer Coklat"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S15",
+"type": "status",
+"amount": 29,
+"note": "ok",
+"label": "Sabun Mandi"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S16",
+"type": "status",
+"amount": 21,
+"note": "ok",
+"label": "Sampo Sachet 12s"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S17",
+"type": "status",
+"amount": 20,
+"note": "ok",
+"label": "Pasta Gigi 190g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S18",
+"type": "status",
+"amount": 22,
+"note": "ok",
+"label": "Tisu Wajah 250s"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S19",
+"type": "status",
+"amount": 22,
+"note": "ok",
+"label": "Deterjen 800g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S20",
+"type": "status",
+"amount": 15,
+"note": "marked_down",
+"label": "Susu Kental Manis 370g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S21",
+"type": "status",
+"amount": 21,
+"note": "ok",
+"label": "Margarin 200g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S22",
+"type": "status",
+"amount": 8,
+"note": "stopped",
+"label": "Selai Kacang 340g"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S23",
+"type": "status",
+"amount": 12,
+"note": "stopped",
+"label": "Mi Gelas"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "S24",
+"type": "status",
+"amount": 26,
+"note": "ok",
+"label": "Korek Api"
+},
+{
+"date": "2026-11-02",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 426000
+},
+{
+"date": "2026-11-03",
+"tenant_id": "-",
+"type": "sales",
+"amount": 320900,
+"note": "39 units"
+},
+{
+"date": "2026-11-03",
+"tenant_id": "S17",
+"type": "po_created",
+"amount": 483800,
+"note": "A:41"
+},
+{
+"date": "2026-11-03",
+"tenant_id": "S17",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Pasta Gigi 190g"
+},
+{
+"date": "2026-11-03",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 409500
+},
+{
+"date": "2026-11-04",
+"tenant_id": "S03",
+"type": "po_received",
+"amount": 726000,
+"note": "A:44"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "S20",
+"type": "po_received",
+"amount": 486000,
+"note": "A:45"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "-",
+"type": "sales",
+"amount": 326200,
+"note": "34 units"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "S16",
+"type": "po_created",
+"amount": 389500,
+"note": "A:41"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "S16",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Sampo Sachet 12s"
+},
+{
+"date": "2026-11-04",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 382200
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S17",
+"type": "po_received",
+"amount": 483800,
+"note": "A:41"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "-",
+"type": "sales",
+"amount": 331900,
+"note": "32 units"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S10",
+"type": "markdown",
+"amount": 18500,
+"note": "20% off, H-30"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S02",
+"type": "po_created",
+"amount": 110700,
+"note": "A:41"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S08",
+"type": "po_created",
+"amount": 1394000,
+"note": "A:41"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S11",
+"type": "po_created",
+"amount": 401800,
+"note": "A:41"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S21",
+"type": "po_created",
+"amount": 295200,
+"note": "A:41"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S02",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S08",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Minyak Goreng 2L"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S10",
+"type": "status",
+"amount": 20,
+"note": "marked_down",
+"label": "Kecap Manis 520ml"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S11",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Saus Sambal 335ml"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S17",
+"type": "status",
+"amount": 59,
+"note": "ok",
+"label": "Pasta Gigi 190g"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "S21",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Margarin 200g"
+},
+{
+"date": "2026-11-05",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 719200
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S16",
+"type": "po_received",
+"amount": 389500,
+"note": "A:41"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "-",
+"type": "sales",
+"amount": 348900,
+"note": "39 units"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S20",
+"type": "markdown",
+"amount": 10800,
+"note": "50% off, H-14"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S04",
+"type": "po_created",
+"amount": 155800,
+"note": "A:41"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S05",
+"type": "po_created",
+"amount": 110400,
+"note": "A:48"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S07",
+"type": "po_created",
+"amount": 647800,
+"note": "A:41"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S18",
+"type": "po_created",
+"amount": 512500,
+"note": "A:41"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S19",
+"type": "po_created",
+"amount": 717500,
+"note": "A:41"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S04",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S05",
+"type": "status",
+"amount": 12,
+"note": "ordered",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S07",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Gula Pasir 1kg"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S16",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Sampo Sachet 12s"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S18",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Tisu Wajah 250s"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "S19",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Deterjen 800g"
+},
+{
+"date": "2026-11-06",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 702700
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S02",
+"type": "po_received",
+"amount": 110700,
+"note": "A:41"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S08",
+"type": "po_received",
+"amount": 1394000,
+"note": "A:41"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S11",
+"type": "po_received",
+"amount": 401800,
+"note": "A:41"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S21",
+"type": "po_received",
+"amount": 295200,
+"note": "A:41"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 2,
+"note": "2 short"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "-",
+"type": "sales",
+"amount": 513400,
+"note": "55 units"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S06",
+"type": "markdown",
+"amount": 11600,
+"note": "20% off, H-30"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S01",
+"type": "po_created",
+"amount": 137700,
+"note": "A:51"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S13",
+"type": "po_created",
+"amount": 357000,
+"note": "A:42"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S01",
+"type": "status",
+"amount": 9,
+"note": "ordered",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S02",
+"type": "status",
+"amount": 52,
+"note": "ok",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S05",
+"type": "status",
+"amount": 0,
+"note": "out",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S06",
+"type": "status",
+"amount": 39,
+"note": "marked_down",
+"label": "Kopi Sachet 10s"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S08",
+"type": "status",
+"amount": 59,
+"note": "ok",
+"label": "Minyak Goreng 2L"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S11",
+"type": "status",
+"amount": 59,
+"note": "ok",
+"label": "Saus Sambal 335ml"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S13",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "S21",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Margarin 200g"
+},
+{
+"date": "2026-11-07",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 1118200
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S04",
+"type": "po_received",
+"amount": 155800,
+"note": "A:41"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S05",
+"type": "po_received",
+"amount": 110400,
+"note": "A:48"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S07",
+"type": "po_received",
+"amount": 647800,
+"note": "A:41"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S18",
+"type": "po_received",
+"amount": 512500,
+"note": "A:41"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S19",
+"type": "po_received",
+"amount": 717500,
+"note": "A:41"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S01",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "-",
+"type": "sales",
+"amount": 499300,
+"note": "58 units"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S15",
+"type": "po_created",
+"amount": 150500,
+"note": "A:43"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S01",
+"type": "status",
+"amount": 0,
+"note": "out",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S04",
+"type": "status",
+"amount": 41,
+"note": "ok",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S05",
+"type": "status",
+"amount": 37,
+"note": "ok",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S07",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Gula Pasir 1kg"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S15",
+"type": "status",
+"amount": 17,
+"note": "ordered",
+"label": "Sabun Mandi"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S18",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Tisu Wajah 250s"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "S19",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Deterjen 800g"
+},
+{
+"date": "2026-11-08",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 1062900
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S01",
+"type": "po_received",
+"amount": 137700,
+"note": "A:51"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S13",
+"type": "po_received",
+"amount": 357000,
+"note": "A:42"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "-",
+"type": "sales",
+"amount": 350800,
+"note": "38 units"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S12",
+"type": "po_created",
+"amount": 799500,
+"note": "A:41"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S01",
+"type": "status",
+"amount": 44,
+"note": "ok",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S12",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Sarden Kaleng 425g"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "S13",
+"type": "status",
+"amount": 55,
+"note": "ok",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-09",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 1007600
+},
+{
+"date": "2026-11-09",
+"tenant_id": "-",
+"type": "kpi_alert",
+"amount": 1007600
+},
+{
+"date": "2026-11-10",
+"tenant_id": "S15",
+"type": "po_received",
+"amount": 150500,
+"note": "A:43"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "-",
+"type": "sales",
+"amount": 322000,
+"note": "36 units"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "S15",
+"type": "status",
+"amount": 57,
+"note": "ok",
+"label": "Sabun Mandi"
+},
+{
+"date": "2026-11-10",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 991100
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S12",
+"type": "po_received",
+"amount": 799500,
+"note": "A:41"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "-",
+"type": "sales",
+"amount": 294400,
+"note": "41 units"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S05",
+"type": "po_created",
+"amount": 119600,
+"note": "A:52"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S10",
+"type": "po_created",
+"amount": 758500,
+"note": "A:41"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S14",
+"type": "po_created",
+"amount": 260400,
+"note": "A:42"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S05",
+"type": "status",
+"amount": 8,
+"note": "ordered",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S12",
+"type": "status",
+"amount": 60,
+"note": "ok",
+"label": "Sarden Kaleng 425g"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "S14",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Wafer Coklat"
+},
+{
+"date": "2026-11-11",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 917300
+},
+{
+"date": "2026-11-12",
+"tenant_id": "-",
+"type": "sales",
+"amount": 290000,
+"note": "36 units"
+},
+{
+"date": "2026-11-12",
+"tenant_id": "S13",
+"type": "markdown",
+"amount": 8500,
+"note": "20% off, H-30"
+},
+{
+"date": "2026-11-12",
+"tenant_id": "S03",
+"type": "status",
+"amount": 44,
+"note": "ok",
+"label": "Susu UHT Full Cream 1L"
+},
+{
+"date": "2026-11-12",
+"tenant_id": "S13",
+"type": "status",
+"amount": 49,
+"note": "marked_down",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-12",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 943800
+},
+{
+"date": "2026-11-13",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 5,
+"note": "5 short"
+},
+{
+"date": "2026-11-13",
+"tenant_id": "-",
+"type": "sales",
+"amount": 265600,
+"note": "24 units"
+},
+{
+"date": "2026-11-13",
+"tenant_id": "S04",
+"type": "po_created",
+"amount": 155800,
+"note": "A:41"
+},
+{
+"date": "2026-11-13",
+"tenant_id": "S04",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-13",
+"tenant_id": "S05",
+"type": "status",
+"amount": 0,
+"note": "out",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-13",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 923800
+},
+{
+"date": "2026-11-14",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 8,
+"note": "8 short"
+},
+{
+"date": "2026-11-14",
+"tenant_id": "-",
+"type": "sales",
+"amount": 523500,
+"note": "44 units"
+},
+{
+"date": "2026-11-14",
+"tenant_id": "S01",
+"type": "po_created",
+"amount": 121500,
+"note": "A:45"
+},
+{
+"date": "2026-11-14",
+"tenant_id": "S01",
+"type": "status",
+"amount": 15,
+"note": "ordered",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-14",
+"tenant_id": "S09",
+"type": "status",
+"amount": 0,
+"note": "out",
+"label": "Beras 5kg"
+},
+{
+"date": "2026-11-14",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 887500
+},
+{
+"date": "2026-11-15",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 13,
+"note": "13 short"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "-",
+"type": "sales",
+"amount": 298000,
+"note": "34 units"
+},
+{
+"date": "2026-11-15",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 859000
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S01",
+"type": "po_received",
+"amount": 121500,
+"note": "A:45"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S05",
+"type": "supplier_switched",
+"amount": 119600,
+"note": "A->B"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S05",
+"type": "po_created",
+"amount": 119600,
+"note": "B:52"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S10",
+"type": "supplier_switched",
+"amount": 758500,
+"note": "A->B"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S10",
+"type": "po_created",
+"amount": 758500,
+"note": "B:41"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S14",
+"type": "supplier_switched",
+"amount": 260400,
+"note": "A->B"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S14",
+"type": "po_created",
+"amount": 260400,
+"note": "B:42"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 10,
+"note": "10 short"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "-",
+"type": "sales",
+"amount": 250200,
+"note": "31 units"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S02",
+"type": "po_created",
+"amount": 113400,
+"note": "A:42"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S01",
+"type": "status",
+"amount": 45,
+"note": "ok",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S02",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S04",
+"type": "status",
+"amount": 0,
+"note": "out",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "S13",
+"type": "status",
+"amount": 42,
+"note": "ok",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-16",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 809700
+},
+{
+"date": "2026-11-17",
+"tenant_id": "S04",
+"type": "stockout",
+"amount": 7,
+"note": "7 short"
+},
+{
+"date": "2026-11-17",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 5,
+"note": "5 short"
+},
+{
+"date": "2026-11-17",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-17",
+"tenant_id": "-",
+"type": "sales",
+"amount": 226300,
+"note": "20 units"
+},
+{
+"date": "2026-11-17",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 768900
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S02",
+"type": "po_received",
+"amount": 113400,
+"note": "A:42"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S04",
+"type": "supplier_switched",
+"amount": 155800,
+"note": "A->B"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S04",
+"type": "po_created",
+"amount": 155800,
+"note": "B:41"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S04",
+"type": "stockout",
+"amount": 7,
+"note": "7 short"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S05",
+"type": "stockout",
+"amount": 6,
+"note": "6 short"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "-",
+"type": "sales",
+"amount": 259500,
+"note": "25 units"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "S02",
+"type": "status",
+"amount": 54,
+"note": "ok",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-18",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 758100
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S05",
+"type": "po_received",
+"amount": 119600,
+"note": "B:52"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S10",
+"type": "po_received",
+"amount": 758500,
+"note": "B:41"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S14",
+"type": "po_received",
+"amount": 260400,
+"note": "B:42"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S04",
+"type": "stockout",
+"amount": 6,
+"note": "6 short"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "-",
+"type": "sales",
+"amount": 247800,
+"note": "25 units"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S05",
+"type": "status",
+"amount": 48,
+"note": "ok",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "S14",
+"type": "status",
+"amount": 43,
+"note": "ok",
+"label": "Wafer Coklat"
+},
+{
+"date": "2026-11-19",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 758100
+},
+{
+"date": "2026-11-20",
+"tenant_id": "S04",
+"type": "stockout",
+"amount": 7,
+"note": "7 short"
+},
+{
+"date": "2026-11-20",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-20",
+"tenant_id": "-",
+"type": "sales",
+"amount": 275100,
+"note": "32 units"
+},
+{
+"date": "2026-11-20",
+"tenant_id": "S20",
+"type": "writeoff",
+"amount": 64800,
+"note": "6 units"
+},
+{
+"date": "2026-11-20",
+"tenant_id": "S20",
+"type": "status",
+"amount": 45,
+"note": "ok",
+"label": "Susu Kental Manis 370g"
+},
+{
+"date": "2026-11-20",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 682500
+},
+{
+"date": "2026-11-21",
+"tenant_id": "S04",
+"type": "po_received",
+"amount": 155800,
+"note": "B:41"
+},
+{
+"date": "2026-11-21",
+"tenant_id": "-",
+"type": "sales",
+"amount": 370100,
+"note": "45 units"
+},
+{
+"date": "2026-11-21",
+"tenant_id": "S10",
+"type": "markdown",
+"amount": 18500,
+"note": "50% off, H-14"
+},
+{
+"date": "2026-11-21",
+"tenant_id": "S04",
+"type": "status",
+"amount": 36,
+"note": "ok",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-21",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 664000
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "-",
+"type": "sales",
+"amount": 440400,
+"note": "60 units"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S01",
+"type": "po_created",
+"amount": 129600,
+"note": "A:48"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S05",
+"type": "po_created",
+"amount": 108100,
+"note": "A:47"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S24",
+"type": "po_created",
+"amount": 36900,
+"note": "A:41"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S01",
+"type": "status",
+"amount": 12,
+"note": "ordered",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S05",
+"type": "status",
+"amount": 13,
+"note": "ordered",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "S24",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Korek Api"
+},
+{
+"date": "2026-11-22",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 634000
+},
+{
+"date": "2026-11-23",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-23",
+"tenant_id": "-",
+"type": "sales",
+"amount": 320300,
+"note": "40 units"
+},
+{
+"date": "2026-11-23",
+"tenant_id": "S06",
+"type": "markdown",
+"amount": 11500,
+"note": "50% off, H-14"
+},
+{
+"date": "2026-11-23",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 615500
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S01",
+"type": "po_received",
+"amount": 129600,
+"note": "A:48"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S05",
+"type": "po_received",
+"amount": 108100,
+"note": "A:47"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S24",
+"type": "po_received",
+"amount": 36900,
+"note": "A:41"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "-",
+"type": "sales",
+"amount": 255400,
+"note": "34 units"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S04",
+"type": "po_created",
+"amount": 155800,
+"note": "A:41"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S01",
+"type": "status",
+"amount": 46,
+"note": "ok",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S04",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S05",
+"type": "status",
+"amount": 44,
+"note": "ok",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "S24",
+"type": "status",
+"amount": 60,
+"note": "ok",
+"label": "Korek Api"
+},
+{
+"date": "2026-11-24",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 597000
+},
+{
+"date": "2026-11-25",
+"tenant_id": "-",
+"type": "sales",
+"amount": 328700,
+"note": "32 units"
+},
+{
+"date": "2026-11-25",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 578500
+},
+{
+"date": "2026-11-26",
+"tenant_id": "S04",
+"type": "po_received",
+"amount": 155800,
+"note": "A:41"
+},
+{
+"date": "2026-11-26",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-26",
+"tenant_id": "-",
+"type": "sales",
+"amount": 278800,
+"note": "34 units"
+},
+{
+"date": "2026-11-26",
+"tenant_id": "S04",
+"type": "status",
+"amount": 47,
+"note": "ok",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-11-26",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 578500
+},
+{
+"date": "2026-11-27",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-27",
+"tenant_id": "-",
+"type": "sales",
+"amount": 272400,
+"note": "35 units"
+},
+{
+"date": "2026-11-27",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 548500
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "-",
+"type": "sales",
+"amount": 353400,
+"note": "48 units"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S02",
+"type": "po_created",
+"amount": 113400,
+"note": "A:42"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S03",
+"type": "po_created",
+"amount": 676500,
+"note": "A:41"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S05",
+"type": "po_created",
+"amount": 101200,
+"note": "A:44"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S02",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S03",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Susu UHT Full Cream 1L"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "S05",
+"type": "status",
+"amount": 16,
+"note": "ordered",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-28",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 537000
+},
+{
+"date": "2026-11-29",
+"tenant_id": "-",
+"type": "sales",
+"amount": 451100,
+"note": "54 units"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S01",
+"type": "po_created",
+"amount": 135000,
+"note": "A:50"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S13",
+"type": "po_created",
+"amount": 357000,
+"note": "A:42"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S14",
+"type": "po_created",
+"amount": 254200,
+"note": "A:41"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S01",
+"type": "status",
+"amount": 10,
+"note": "ordered",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S13",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "S14",
+"type": "status",
+"amount": 19,
+"note": "ordered",
+"label": "Wafer Coklat"
+},
+{
+"date": "2026-11-29",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 507000
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S02",
+"type": "po_received",
+"amount": 113400,
+"note": "A:42"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S03",
+"type": "po_received",
+"amount": 676500,
+"note": "A:41"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S05",
+"type": "po_received",
+"amount": 101200,
+"note": "A:44"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "-",
+"type": "sales",
+"amount": 279300,
+"note": "32 units"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S02",
+"type": "status",
+"amount": 55,
+"note": "ok",
+"label": "Indomie Soto"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S03",
+"type": "status",
+"amount": 55,
+"note": "ok",
+"label": "Susu UHT Full Cream 1L"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "S05",
+"type": "status",
+"amount": 48,
+"note": "ok",
+"label": "Air Mineral 600ml"
+},
+{
+"date": "2026-11-30",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 495500
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S01",
+"type": "po_received",
+"amount": 135000,
+"note": "A:50"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S13",
+"type": "po_received",
+"amount": 357000,
+"note": "A:42"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S14",
+"type": "po_received",
+"amount": 254200,
+"note": "A:41"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S09",
+"type": "stockout",
+"amount": 1,
+"note": "1 short"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "-",
+"type": "sales",
+"amount": 262300,
+"note": "34 units"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S04",
+"type": "po_created",
+"amount": 159600,
+"note": "A:42"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S01",
+"type": "status",
+"amount": 49,
+"note": "ok",
+"label": "Indomie Goreng"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S04",
+"type": "status",
+"amount": 18,
+"note": "ordered",
+"label": "Teh Botol 450ml"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S13",
+"type": "status",
+"amount": 58,
+"note": "ok",
+"label": "Biskuit Kelapa"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "S14",
+"type": "status",
+"amount": 55,
+"note": "ok",
+"label": "Wafer Coklat"
+},
+{
+"date": "2026-12-01",
+"tenant_id": "-",
+"type": "day_close",
+"amount": 477000
+}
+],
+"verdict": "pass",
+"mutation": {
+"total": 30,
+"killed": 30
+},
+"builder_tests": {
+"ran": 8,
+"failed": 0,
+"failures": []
+},
+"audit_spec": {
+"ran": 10,
+"failed": 0
+},
+"sandbox": "sb-01m570snrebjtmxrrbdzc1cz32"
+}

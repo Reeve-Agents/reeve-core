@@ -1,0 +1,90 @@
+{
+  "pack": "minimarket",
+  "business_name": "Minimarket Berkah",
+  "currency": "IDR",
+  "cards": [
+    {
+      "id": "M1",
+      "title": "Pesan ke Supplier A saat stok (rak + on-order) di bawah 20, sampai 60 unit",
+      "source_quote": "Kalau stok barang (yang di rak ditambah yang sudah dipesan) di bawah 20, pesan ke Supplier A sampai jadi 60.",
+      "kind": "rule",
+      "type": "reorder_point",
+      "below_units": 20,
+      "order_up_to_units": 60,
+      "supplier": "A"
+    },
+    {
+      "id": "M2",
+      "title": "Jika Supplier A telat 3 hari dari jadwal kirim, batalkan dan pesan ke Supplier B",
+      "source_quote": "Kalau Supplier A telat 3 hari dari jadwal kirim, batalkan dan pesan ke Supplier B.",
+      "kind": "rule",
+      "type": "supplier_fallback",
+      "late_days": 3,
+      "backup_supplier": "B"
+    },
+    {
+      "id": "M3",
+      "title": "Diskon 20% pada H-30 sebelum kedaluwarsa",
+      "source_quote": "H-30 sebelum kedaluwarsa, kasih diskon 20%.",
+      "kind": "rule",
+      "type": "expiry_markdown",
+      "days_before_expiry": 30,
+      "percent": 20
+    },
+    {
+      "id": "M4",
+      "title": "Diskon 50% pada H-14 sebelum kedaluwarsa",
+      "source_quote": "H-14 sebelum kedaluwarsa, diskon jadi 50%.",
+      "kind": "rule",
+      "type": "expiry_markdown",
+      "days_before_expiry": 14,
+      "percent": 50
+    },
+    {
+      "id": "M5",
+      "title": "Diskon tidak boleh membuat harga jual di bawah harga modal",
+      "source_quote": "Diskon tidak boleh bikin harga jual di bawah harga modal.",
+      "kind": "constraint",
+      "type": "markdown_floor",
+      "floor": "cost"
+    },
+    {
+      "id": "M6",
+      "title": "Jangan pesan lagi barang yang tidak laku selama 14 hari",
+      "source_quote": "Barang yang tidak laku 14 hari, jangan dipesan lagi.",
+      "kind": "rule",
+      "type": "slow_mover_stop",
+      "no_sale_days": 14
+    },
+    {
+      "id": "M7",
+      "title": "PO di atas Rp2.000.000 harus disetujui pemilik",
+      "source_quote": "PO di atas Rp2.000.000 harus saya setujui dulu.",
+      "kind": "constraint",
+      "type": "po_approval_threshold",
+      "po_above": 2000000
+    },
+    {
+      "id": "M8",
+      "title": "Nilai barang yang kedaluwarsa dalam 30 hari tidak boleh lebih dari Rp1.000.000; dicek tiap Senin dan pemilik dikabari",
+      "source_quote": "Nilai barang yang akan kedaluwarsa dalam 30 hari ke depan tidak boleh lebih dari Rp1.000.000; cek tiap Senin dan kabari saya.",
+      "kind": "kpi",
+      "type": "expiring_value_limit",
+      "max_value": 1000000,
+      "window_days": 30,
+      "check_weekday": 0
+    }
+  ],
+  "questions": [
+    "Apakah aturan pemesanan (di bawah 20, sampai 60) berlaku sama untuk semua 24 barang, atau ada level berbeda per barang?",
+    "Apakah telat 3 hari berarti tepat 3 hari atau sudah lewat 3 hari?",
+    "Apakah diskon H-14 (50%) menggantikan diskon H-30 (20%), atau keduanya berlaku bertahap?",
+    "Apakah 14 hari tidak laku dihitung dari hari terakhir terjual per barang?"
+  ],
+  "assumptions": [
+    "Aturan pemesanan berlaku untuk semua barang, dan stok on-order dihitung sebagai bagian dari stok.",
+    "Telat 3 hari dihitung saat keterlambatan mencapai 3 hari, sehingga beralih ke Supplier B tidak menunggu lebih lama.",
+    "Diskon H-14 menggantikan diskon H-30 saat tanggal kedaluwarsa tinggal 14 hari.",
+    "Pengecekan nilai kedaluwarsa dilakukan setiap hari Senin (0) dengan jendela 30 hari ke depan."
+  ]
+}

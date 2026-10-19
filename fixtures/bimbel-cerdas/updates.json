@@ -1,0 +1,7 @@
+[
+  { "day": 2, "key": "S01", "field": "status", "value": "lunas" },
+  { "day": 4, "key": "S03", "field": "status", "value": "lunas" },
+  { "day": 5, "key": "S05", "field": "status", "value": "lunas" },
+  { "day": 9, "key": "S10", "field": "status", "value": "lunas" },
+  { "day": 3, "key": "S06", "field": "sessions_left", "value": 8 }
+]

@@ -1,0 +1,98 @@
+{
+  "pack": "minimarket",
+  "business_name": "Minimarket Berkah",
+  "currency": "IDR",
+  "cards": [
+    {
+      "id": "M1",
+      "title": "Jika stok (rak + sudah dipesan) di bawah 20, pesan ke Supplier A sampai jadi 60",
+      "source_quote": "Kalau stok barang (yang di rak ditambah yang sudah dipesan) di bawah 20, pesan ke Supplier A sampai jadi 60.",
+      "kind": "rule",
+      "type": "reorder_point",
+      "below_units": 20,
+      "order_up_to_units": 60,
+      "supplier": "A"
+    },
+    {
+      "id": "M2",
+      "title": "Jika Supplier A telat 3 hari dari jadwal kirim, batalkan dan pesan ke Supplier B",
+      "source_quote": "Kalau Supplier A telat 3 hari dari jadwal kirim, batalkan dan pesan ke Supplier B.",
+      "kind": "rule",
+      "type": "supplier_fallback",
+      "late_days": 3,
+      "backup_supplier": "B"
+    },
+    {
+      "id": "M3",
+      "title": "H-30 sebelum kedaluwarsa, diskon 20%",
+      "source_quote": "H-30 sebelum kedaluwarsa, kasih diskon 20%.",
+      "kind": "rule",
+      "type": "expiry_markdown",
+      "days_before_expiry": 30,
+      "percent": 20
+    },
+    {
+      "id": "M4",
+      "title": "H-14 sebelum kedaluwarsa, diskon menjadi 50%",
+      "source_quote": "H-14 sebelum kedaluwarsa, diskon jadi 50%.",
+      "kind": "rule",
+      "type": "expiry_markdown",
+      "days_before_expiry": 14,
+      "percent": 50
+    },
+    {
+      "id": "M5",
+      "title": "Diskon tidak boleh membuat harga jual di bawah harga modal",
+      "source_quote": "Diskon tidak boleh bikin harga jual di bawah harga modal.",
+      "kind": "constraint",
+      "type": "markdown_floor",
+      "floor": "cost"
+    },
+    {
+      "id": "M6",
+      "title": "Barang yang tidak laku 14 hari tidak dipesan lagi",
+      "source_quote": "Barang yang tidak laku 14 hari, jangan dipesan lagi.",
+      "kind": "rule",
+      "type": "slow_mover_stop",
+      "no_sale_days": 14
+    },
+    {
+      "id": "M7",
+      "title": "PO di atas Rp2.000.000 harus disetujui pemilik dulu",
+      "source_quote": "PO di atas Rp2.000.000 harus saya setujui dulu.",
+      "kind": "constraint",
+      "type": "po_approval_threshold",
+      "po_above": 2000000
+    },
+    {
+      "id": "M8",
+      "title": "Nilai barang yang kedaluwarsa dalam 30 hari ke depan maksimal Rp1.000.000, dicek tiap Senin dan dilaporkan ke pemilik",
+      "source_quote": "Nilai barang yang akan kedaluwarsa dalam 30 hari ke depan tidak boleh lebih dari Rp1.000.000; cek tiap Senin dan kabari saya.",
+      "kind": "kpi",
+      "type": "expiring_value_limit",
+      "max_value": 1000000,
+      "window_days": 30,
+      "check_weekday": 0
+    }
+  ],
+  "questions": [
+    "Apakah batas pesan ulang (di bawah 20, pesan sampai 60) berlaku sama untuk semua 24 barang, atau ada barang dengan batas berbeda?",
+    "Apakah 'telat 3 hari' berarti tepat 3 hari atau lebih (pindah ke Supplier B pada hari ke-3 keterlambatan)?",
+    "Apakah pesanan ke Supplier B memakai jumlah yang sama dengan pesanan yang dibatalkan ke Supplier A?",
+    "Diskon 20% dan 50% dihitung dari harga jual normal, bukan bertumpuk (50% dari harga normal, bukan 50% tambahan setelah 20%)?",
+    "Jika diskon membuat harga di bawah modal, apakah harga diturunkan sampai sama dengan harga modal saja, atau diskon tidak diberikan sama sekali?",
+    "'Tidak laku 14 hari' dihitung sejak penjualan terakhir? Apakah barang baru yang belum pernah terjual dalam 14 hari pertama juga dihentikan?",
+    "Nilai barang yang akan kedaluwarsa dihitung berdasarkan harga modal atau harga jual?",
+    "Apakah PO tepat Rp2.000.000 perlu persetujuan, atau hanya yang lebih dari Rp2.000.000?"
+  ],
+  "assumptions": [
+    "Satu batas pesan ulang (di bawah 20, sampai 60) diterapkan ke semua 24 barang, sesuai teks SOP.",
+    "Stok yang dihitung = stok di rak ditambah stok yang sudah dipesan (dinyatakan eksplisit di SOP).",
+    "Supplier A dipindah ke Supplier B saat keterlambatan mencapai 3 hari.",
+    "Diskon H-14 (50%) menggantikan diskon H-30 (20%), tidak ditumpuk; keduanya dari harga jual normal.",
+    "Batas bawah harga modal berlaku untuk semua diskon; bila melanggar, harga dibatasi tidak di bawah harga modal (pembacaan paling hati-hati).",
+    "Hanya PO dengan nilai lebih dari Rp2.000.000 yang perlu persetujuan; untuk kehati-hatian, PO yang belum disetujui tidak dikirim.",
+    "Nilai barang kedaluwarsa dihitung dengan harga modal sampai dikonfirmasi pemilik.",
+    "Barang yang dihentikan karena tidak laku 14 hari tidak dipesan ulang meskipun stoknya di bawah 20."
+  ]
+}

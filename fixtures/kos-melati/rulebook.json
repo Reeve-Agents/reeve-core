@@ -1,0 +1,85 @@
+{
+  "business_name": "Kos Melati",
+  "currency": "IDR",
+  "cards": [
+    {
+      "id": "R1",
+      "kind": "rule",
+      "type": "invoice_schedule",
+      "title": "Kirim tagihan sewa ke semua penghuni setiap tanggal 1",
+      "source_quote": "Tagihan sewa dikirim ke semua penghuni setiap tanggal 1.",
+      "day_of_month": 1
+    },
+    {
+      "id": "R2",
+      "kind": "rule",
+      "type": "reminder",
+      "title": "Kirim pengingat H+3 dan H+10 jika belum lunas",
+      "source_quote": "kirim pengingat H+3 dan pengingat kedua H+10",
+      "days_after_due": [3, 10]
+    },
+    {
+      "id": "R3",
+      "kind": "rule",
+      "type": "late_fee",
+      "title": "Denda 5% dari sewa pada H+7, sekali per tagihan; penghuni ≥12 bulan dapat +3 hari",
+      "source_quote": "H+7 belum lunas kena denda 5% dari harga sewa, cuma sekali per tagihan. Penghuni yang sudah tinggal minimal 12 bulan dapat toleransi 3 hari tambahan",
+      "days_after_due": 7,
+      "percent": 5,
+      "basis": "rent",
+      "tenure_grace": { "min_months": 12, "extra_days": 3 }
+    },
+    {
+      "id": "R4",
+      "kind": "rule",
+      "type": "notice",
+      "title": "Kirim surat peringatan keluar pada H+14 jika belum lunas",
+      "source_quote": "H+14 masih belum lunas, kirim surat peringatan untuk keluar.",
+      "days_after_due": 14
+    },
+    {
+      "id": "R5",
+      "kind": "rule",
+      "type": "overpayment",
+      "title": "Kelebihan bayar menjadi saldo untuk tagihan berikutnya",
+      "source_quote": "kelebihannya jadi saldo untuk tagihan bulan depan",
+      "policy": "credit_next_invoice"
+    },
+    {
+      "id": "R6",
+      "kind": "constraint",
+      "type": "max_fee",
+      "title": "Total denda per tagihan maksimal 10% dari sewa",
+      "source_quote": "Total denda per tagihan tidak boleh lebih dari 10% harga sewa.",
+      "max_percent_of_rent": 10
+    },
+    {
+      "id": "R7",
+      "kind": "constraint",
+      "type": "approval_threshold",
+      "title": "Refund di atas Rp500.000 wajib persetujuan pemilik",
+      "source_quote": "Refund di atas Rp500.000 harus saya setujui dulu.",
+      "refund_above": 500000
+    },
+    {
+      "id": "R8",
+      "kind": "kpi",
+      "type": "revenue_target",
+      "title": "Target pemasukan Rp45 juta per bulan, dicek tanggal 15",
+      "source_quote": "Target pemasukan Rp45 juta per bulan; cek tanggal 15, kalau belum tercapai kabari saya.",
+      "monthly_target": 45000000,
+      "basis": "collected",
+      "alert_day": 15
+    }
+  ],
+  "questions": [
+    "Denda 5% dihitung dari harga sewa penuh atau dari sisa tagihan yang belum dibayar? (saat ini: harga sewa penuh)",
+    "Kalau penghuni bayar sebagian sebelum H+7, apakah denda tetap berlaku? (saat ini: ya, selama masih ada sisa)",
+    "Target Rp45 juta: dihitung dari uang yang sudah masuk atau dari total tagihan? (saat ini: uang yang sudah masuk)"
+  ],
+  "assumptions": [
+    "Jatuh tempo = tanggal tagihan dikirim (tanggal 1).",
+    "Masa tinggal dihitung dalam bulan penuh sejak tanggal masuk.",
+    "Pengingat berhenti begitu tagihan lunas."
+  ]
+}

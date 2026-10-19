@@ -1,0 +1,96 @@
+{
+  "business_name": "Kos Melati",
+  "currency": "IDR",
+  "cards": [
+    {
+      "id": "R1",
+      "title": "Kirim tagihan sewa ke semua penghuni setiap tanggal 1",
+      "source_quote": "Tagihan sewa dikirim ke semua penghuni setiap tanggal 1.",
+      "kind": "rule",
+      "type": "invoice_schedule",
+      "day_of_month": 1
+    },
+    {
+      "id": "R2",
+      "title": "Kirim pengingat H+3 dan pengingat kedua H+10 jika belum bayar",
+      "source_quote": "Kalau belum bayar, kirim pengingat H+3 dan pengingat kedua H+10.",
+      "kind": "rule",
+      "type": "reminder",
+      "days_after_due": [
+        3,
+        10
+      ]
+    },
+    {
+      "id": "R3",
+      "title": "Denda 5% dari harga sewa jika belum lunas H+7, sekali per tagihan; penghuni minimal 12 bulan dapat tambahan 3 hari",
+      "source_quote": "H+7 belum lunas kena denda 5% dari harga sewa, cuma sekali per tagihan. Penghuni yang sudah tinggal minimal 12 bulan dapat toleransi 3 hari tambahan sebelum kena denda.",
+      "kind": "rule",
+      "type": "late_fee",
+      "days_after_due": 7,
+      "percent": 5,
+      "basis": "rent",
+      "tenure_grace": {
+        "min_months": 12,
+        "extra_days": 3
+      }
+    },
+    {
+      "id": "R4",
+      "title": "Kirim surat peringatan untuk keluar jika masih belum lunas H+14",
+      "source_quote": "H+14 masih belum lunas, kirim surat peringatan untuk keluar.",
+      "kind": "rule",
+      "type": "notice",
+      "days_after_due": 14
+    },
+    {
+      "id": "R5",
+      "title": "Kelebihan bayar menjadi saldo untuk tagihan bulan depan",
+      "source_quote": "Kalau ada yang bayar lebih, kelebihannya jadi saldo untuk tagihan bulan depan.",
+      "kind": "rule",
+      "type": "overpayment",
+      "policy": "credit_next_invoice"
+    },
+    {
+      "id": "R6",
+      "title": "Total denda per tagihan tidak boleh lebih dari 10% harga sewa",
+      "source_quote": "Total denda per tagihan tidak boleh lebih dari 10% harga sewa.",
+      "kind": "constraint",
+      "type": "max_fee",
+      "max_percent_of_rent": 10
+    },
+    {
+      "id": "R7",
+      "title": "Refund di atas Rp500.000 harus disetujui pemilik terlebih dahulu",
+      "source_quote": "Refund di atas Rp500.000 harus saya setujui dulu.",
+      "kind": "constraint",
+      "type": "approval_threshold",
+      "refund_above": 500000
+    },
+    {
+      "id": "R8",
+      "title": "Target pemasukan Rp45 juta per bulan, dicek tanggal 15; kabari pemilik jika belum tercapai",
+      "source_quote": "Target pemasukan Rp45 juta per bulan; cek tanggal 15, kalau belum tercapai kabari saya.",
+      "kind": "kpi",
+      "type": "revenue_target",
+      "monthly_target": 45000000,
+      "basis": "collected",
+      "alert_day": 15
+    }
+  ],
+  "questions": [
+    "Apakah tanggal jatuh tempo sama dengan tanggal tagihan dikirim (tanggal 1), sehingga H+3, H+7, H+10, dan H+14 dihitung dari tanggal 1?",
+    "Untuk penghuni yang sudah tinggal minimal 12 bulan, apakah toleransi 3 hari berarti denda baru dikenakan H+10? Apakah toleransi ini juga berlaku untuk surat peringatan H+14 dan pengingat?",
+    "Target pemasukan Rp45 juta dihitung dari uang yang sudah diterima (terkumpul) atau dari total tagihan yang dikirim?",
+    "Apakah penghuni boleh meminta kelebihan bayar dikembalikan (refund) alih-alih menjadi saldo bulan depan? Jika ya, refund di atas Rp500.000 perlu persetujuan Anda.",
+    "Masa tinggal 12 bulan dihitung sampai tanggal tagihan atau sampai tanggal denda dikenakan?"
+  ],
+  "assumptions": [
+    "Tanggal jatuh tempo dianggap sama dengan tanggal tagihan (tanggal 1); semua hitungan H+ dimulai dari tanggal tersebut.",
+    "Denda 5% dihitung dari harga sewa (bukan sisa tunggakan), sesuai teks SOP, dan hanya dikenakan sekali per tagihan.",
+    "Toleransi 3 hari tambahan hanya berlaku untuk denda (denda H+10 untuk penghuni ≥12 bulan); pengingat dan surat peringatan H+14 tetap mengikuti jadwal biasa.",
+    "Target pemasukan dihitung dari uang yang sudah terkumpul (pembacaan paling konservatif), dicek tanggal 15, dan jika belum tercapai pemilik diberi notifikasi.",
+    "Kelebihan bayar otomatis menjadi saldo tagihan bulan depan; refund tidak dilakukan otomatis, dan refund di atas Rp500.000 selalu menunggu persetujuan pemilik.",
+    "Batas maksimal denda 10% harga sewa per tagihan tetap diterapkan sebagai pengaman meskipun denda tunggal 5% tidak melampauinya."
+  ]
+}

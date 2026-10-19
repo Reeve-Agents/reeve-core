@@ -1,0 +1,252 @@
+{
+  "pack": "generic",
+  "business_name": "Bimbel Cerdas",
+  "data": {
+    "entity": "Siswa",
+    "entity_plural": "Siswa",
+    "key_field": "id",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "parent_phone",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "text"
+      },
+      {
+        "name": "fee",
+        "type": "number"
+      },
+      {
+        "name": "due_date",
+        "type": "date"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "sessions_left",
+        "type": "number"
+      },
+      {
+        "name": "active",
+        "type": "text"
+      }
+    ],
+    "source": {
+      "connector": "googlesheets",
+      "tool": null
+    }
+  },
+  "currency": "IDR",
+  "cards": [
+    {
+      "id": "R1",
+      "title": "Pengingat WhatsApp SPP 3 hari sebelum jatuh tempo",
+      "source_quote": "Setiap hari, kalau SPP belum lunas dan jatuh tempo 3 hari lagi atau kurang, kirim WhatsApp pengingat ke orang tua.",
+      "kind": "rule",
+      "type": "generic_rule",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        },
+        {
+          "field": "due_date",
+          "op": "days_until_lte",
+          "value": 3
+        },
+        {
+          "field": "active",
+          "op": "eq",
+          "value": "aktif"
+        }
+      ],
+      "action": {
+        "connector": "log",
+        "tool": "LOG",
+        "args": [
+          {
+            "name": "to",
+            "template": "{parent_phone}"
+          },
+          {
+            "name": "message",
+            "template": "Pengingat: SPP {name} sebesar Rp{fee} jatuh tempo {due_date}. Mohon segera dilunasi. Terima kasih."
+          }
+        ],
+        "amount_field": null
+      },
+      "once_per_record": false
+    },
+    {
+      "id": "R2",
+      "title": "Email SPP yang lewat 7 hari dari jatuh tempo",
+      "source_quote": "Kalau SPP sudah lewat 7 hari dari jatuh tempo dan masih belum lunas, kirim email ke orang tua, cukup sekali.",
+      "kind": "rule",
+      "type": "generic_rule",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        },
+        {
+          "field": "due_date",
+          "op": "days_since_gte",
+          "value": 7
+        },
+        {
+          "field": "active",
+          "op": "eq",
+          "value": "aktif"
+        }
+      ],
+      "action": {
+        "connector": "gmail",
+        "tool": "GMAIL_SEND_EMAIL",
+        "args": [
+          {
+            "name": "recipient_email",
+            "template": "{email}"
+          },
+          {
+            "name": "subject",
+            "template": "Tagihan SPP {name} sudah lewat jatuh tempo"
+          },
+          {
+            "name": "body",
+            "template": "Yth. Orang tua {name}, SPP sebesar Rp{fee} sudah lewat 7 hari dari jatuh tempo {due_date}. Mohon segera dilunasi. Terima kasih."
+          }
+        ],
+        "amount_field": null
+      },
+      "once_per_record": true
+    },
+    {
+      "id": "R3",
+      "title": "Tawaran perpanjangan paket saat sisa sesi kurang dari 2",
+      "source_quote": "Kalau sisa sesi siswa kurang dari 2, kirim WhatsApp tawaran perpanjangan paket, cukup sekali.",
+      "kind": "rule",
+      "type": "generic_rule",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "sessions_left",
+          "op": "lt",
+          "value": 2
+        },
+        {
+          "field": "active",
+          "op": "eq",
+          "value": "aktif"
+        }
+      ],
+      "action": {
+        "connector": "log",
+        "tool": "LOG",
+        "args": [
+          {
+            "name": "to",
+            "template": "{parent_phone}"
+          },
+          {
+            "name": "message",
+            "template": "Halo orang tua {name}, sisa sesi les tinggal {sessions_left}. Apakah Anda ingin memperpanjang paket? Terima kasih."
+          }
+        ],
+        "amount_field": null
+      },
+      "once_per_record": true
+    },
+    {
+      "id": "R4",
+      "title": "Jangan pernah mengirim pesan ke siswa berhenti",
+      "source_quote": "Jangan pernah kirim pesan apa pun ke siswa yang statusnya berhenti.",
+      "kind": "constraint",
+      "type": "generic_never",
+      "tool": "*",
+      "match": "all",
+      "conditions": [
+        {
+          "field": "active",
+          "op": "eq",
+          "value": "berhenti"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "title": "Tagihan di atas Rp2.000.000 perlu persetujuan pemilik",
+      "source_quote": "Untuk tagihan di atas Rp2.000.000, saya harus setuju dulu sebelum pengingatnya dikirim.",
+      "kind": "constraint",
+      "type": "generic_approval",
+      "tool": "*",
+      "amount_above": 2000000
+    },
+    {
+      "id": "R6",
+      "title": "Total SPP belum lunas di atas Rp5.000.000 setiap Senin",
+      "source_quote": "Setiap Senin, kalau total SPP yang belum lunas lebih dari Rp5.000.000, kabari saya.",
+      "kind": "kpi",
+      "type": "generic_kpi",
+      "schedule": {
+        "every": "week",
+        "weekday": 0,
+        "day_of_month": null
+      },
+      "aggregate": "sum",
+      "field": "fee",
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        }
+      ],
+      "alert_if": "above",
+      "threshold": 5000000
+    }
+  ],
+  "questions": [
+    "Tool WhatsApp mana yang terhubung untuk mengirim pengingat? Saat ini R1 dan R3 dicatat sebagai LOG sampai nama tool dikonfirmasi.",
+    "Untuk tagihan di atas Rp2.000.000 (R5), siapa yang menyetujui pengingat dan bagaimana persetujuan diberikan?",
+    "Pada hari Senin (R6), apakah total SPP belum lunas hanya dihitung untuk siswa yang aktif?"
+  ],
+  "assumptions": [
+    "Nilai status yang berarti belum bayar adalah selain \"lunas\", yaitu \"belum\".",
+    "Jumlah tagihan SPP adalah kolom fee.",
+    "Pengingat hanya dikirim ke siswa dengan active \"aktif\", sebagai bentuk kehati-hatian terhadap aturan siswa berhenti.",
+    "Kalimat \"kabari saya\" berarti pemilik diberi notifikasi, dan saluran notifikasinya belum ditentukan.",
+    "Tanggal jatuh tempo ada di kolom due_date dan dibaca sebagai tanggal."
+  ]
+}

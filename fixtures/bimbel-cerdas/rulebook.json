@@ -1,0 +1,237 @@
+{
+  "pack": "generic",
+  "business_name": "Bimbel Cerdas",
+  "currency": "IDR",
+  "data": {
+    "entity": "Siswa",
+    "entity_plural": "Siswa",
+    "key_field": "id",
+    "fields": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "parent_phone",
+        "type": "text"
+      },
+      {
+        "name": "telegram_chat_id",
+        "type": "number"
+      },
+      {
+        "name": "email",
+        "type": "text"
+      },
+      {
+        "name": "fee",
+        "type": "number"
+      },
+      {
+        "name": "due_date",
+        "type": "date"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "sessions_left",
+        "type": "number"
+      },
+      {
+        "name": "active",
+        "type": "text"
+      }
+    ],
+    "source": {
+      "connector": "googlesheets",
+      "tool": "GOOGLESHEETS_BATCH_GET"
+    }
+  },
+  "cards": [
+    {
+      "id": "R1",
+      "kind": "rule",
+      "type": "generic_rule",
+      "title": "Pengingat Telegram ke orang tua saat SPP belum lunas dan jatuh tempo ≤ 3 hari lagi",
+      "source_quote": "Setiap hari, kalau SPP belum lunas dan jatuh tempo 3 hari lagi atau kurang, kirim Telegram pengingat ke orang tua.",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        },
+        {
+          "field": "due_date",
+          "op": "days_until_lte",
+          "value": 3
+        }
+      ],
+      "action": {
+        "connector": "telegram",
+        "tool": "TELEGRAM_SEND_MESSAGE",
+        "args": [
+          {
+            "name": "chat_id",
+            "template": "{telegram_chat_id}"
+          },
+          {
+            "name": "text",
+            "template": "Halo, SPP {name} sebesar Rp{fee} jatuh tempo {due_date}. Terima kasih - Bimbel Cerdas"
+          }
+        ],
+        "amount_field": "fee"
+      },
+      "once_per_record": false
+    },
+    {
+      "id": "R2",
+      "kind": "rule",
+      "type": "generic_rule",
+      "title": "Email ke orang tua sekali saat SPP lewat 7 hari dari jatuh tempo",
+      "source_quote": "Kalau SPP sudah lewat 7 hari dari jatuh tempo dan masih belum lunas, kirim email ke orang tua, cukup sekali.",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        },
+        {
+          "field": "due_date",
+          "op": "days_since_gte",
+          "value": 7
+        }
+      ],
+      "action": {
+        "connector": "gmail",
+        "tool": "GMAIL_SEND_EMAIL",
+        "args": [
+          {
+            "name": "recipient_email",
+            "template": "{email}"
+          },
+          {
+            "name": "subject",
+            "template": "SPP {name} sudah lewat jatuh tempo"
+          },
+          {
+            "name": "body",
+            "template": "SPP {name} sebesar Rp{fee} jatuh tempo {due_date} dan belum kami terima."
+          }
+        ],
+        "amount_field": "fee"
+      },
+      "once_per_record": true
+    },
+    {
+      "id": "R3",
+      "kind": "rule",
+      "type": "generic_rule",
+      "title": "Tawaran perpanjangan paket lewat Telegram saat sisa sesi < 2",
+      "source_quote": "Kalau sisa sesi siswa kurang dari 2, kirim Telegram tawaran perpanjangan paket, cukup sekali.",
+      "schedule": {
+        "every": "day",
+        "weekday": null,
+        "day_of_month": null
+      },
+      "match": "all",
+      "conditions": [
+        {
+          "field": "sessions_left",
+          "op": "lt",
+          "value": 2
+        }
+      ],
+      "action": {
+        "connector": "telegram",
+        "tool": "TELEGRAM_SEND_MESSAGE",
+        "args": [
+          {
+            "name": "chat_id",
+            "template": "{telegram_chat_id}"
+          },
+          {
+            "name": "text",
+            "template": "Halo, sesi {name} tinggal {sessions_left}. Mau perpanjang paket?"
+          }
+        ],
+        "amount_field": null
+      },
+      "once_per_record": true
+    },
+    {
+      "id": "R4",
+      "kind": "constraint",
+      "type": "generic_never",
+      "title": "Tidak pernah mengirim pesan ke siswa yang berhenti",
+      "source_quote": "Jangan pernah kirim pesan apa pun ke siswa yang statusnya berhenti.",
+      "tool": "*",
+      "match": "all",
+      "conditions": [
+        {
+          "field": "active",
+          "op": "eq",
+          "value": "berhenti"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "kind": "constraint",
+      "type": "generic_approval",
+      "title": "Tagihan di atas Rp2.000.000 menunggu persetujuan pemilik",
+      "source_quote": "Untuk tagihan di atas Rp2.000.000, saya harus setuju dulu sebelum pengingatnya dikirim.",
+      "tool": "*",
+      "amount_above": 2000000
+    },
+    {
+      "id": "R6",
+      "kind": "kpi",
+      "type": "generic_kpi",
+      "title": "Setiap Senin: total SPP belum lunas di atas Rp5.000.000, kabari pemilik",
+      "source_quote": "Setiap Senin, kalau total SPP yang belum lunas lebih dari Rp5.000.000, kabari saya.",
+      "schedule": {
+        "every": "week",
+        "weekday": 0,
+        "day_of_month": null
+      },
+      "aggregate": "sum",
+      "field": "fee",
+      "match": "all",
+      "conditions": [
+        {
+          "field": "status",
+          "op": "neq",
+          "value": "lunas"
+        }
+      ],
+      "alert_if": "above",
+      "threshold": 5000000
+    }
+  ],
+  "questions": [
+    "Pengingat H-3 dikirim setiap hari sampai jatuh tempo (bisa sampai 4 kali). Cukup sekali saja?",
+    "Siswa berhenti tidak dikirimi apa pun, termasuk email tunggakan. Benar begitu?"
+  ],
+  "assumptions": [
+    "\"Belum lunas\" berarti kolom status bukan \"lunas\".",
+    "Nama tool Telegram dan Gmail mengikuti Composio; orang tua harus pernah mengirim pesan ke bot agar chat_id-nya ada."
+  ]
+}
