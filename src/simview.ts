@@ -46,30 +46,48 @@ export function roomsAt(events: SimEventLike[], date: string): RoomView[] {
   });
 }
 
-export const rupiah = (n: number) => `Rp${n.toLocaleString("en-US")}`;
-export const juta = (n: number) => `Rp${(n / 1e6).toFixed(1).replace(/\.0$/, "")} jt`;
+/** "en" (the default: developer studio, landing page) or "id" (the owner app). */
+export type Locale = "en" | "id";
+
+/** Thousands with dots, as Indonesians write them: 1.007.600. */
+const dots = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+export const rupiah = (n: number, locale: Locale = "en") => (locale === "id" ? `Rp${dots(n)}` : `Rp${n.toLocaleString("en-US")}`);
+export const juta = (n: number, locale: Locale = "en") => {
+  const v = (n / 1e6).toFixed(1).replace(/\.0$/, "");
+  return `Rp${locale === "id" ? v.replace(".", ",") : v} jt`;
+};
 /** Under a million in full rupiah, above it in juta. */
-export const money = (n: number) => (n >= 1_000_000 ? juta(n) : rupiah(n));
+export const money = (n: number, locale: Locale = "en") => (n >= 1_000_000 ? juta(n, locale) : rupiah(n, locale));
 
 /** What happened on `date`, one plain sentence per kind of event. */
-export function dayLines(events: SimEventLike[], date: string): string[] {
+export function dayLines(events: SimEventLike[], date: string, locale: Locale = "en"): string[] {
   const today = events.filter((e) => e.date === date);
   const of = (t: string) => today.filter((e) => e.type === t);
+  const id = locale === "id";
+  const m = (n: number) => money(n, locale);
   const lines: string[] = [];
   const invoices = of("invoice");
-  if (invoices.length) lines.push(`${invoices.length} invoices sent`);
+  if (invoices.length) lines.push(id ? `${invoices.length} tagihan dikirim` : `${invoices.length} invoices sent`);
   const payments = of("payment");
-  if (payments.length) lines.push(`${payments.length} payment${payments.length > 1 ? "s" : ""} in, ${money(sum(payments))}`);
+  if (payments.length)
+    lines.push(id ? `${payments.length} pembayaran masuk, ${m(sum(payments))}` : `${payments.length} payment${payments.length > 1 ? "s" : ""} in, ${m(sum(payments))}`);
   const credits = of("credit");
-  if (credits.length) lines.push(`${credits.length} overpayment kept as credit`);
+  if (credits.length) lines.push(id ? `${credits.length} kelebihan bayar jadi saldo` : `${credits.length} overpayment kept as credit`);
   const reminders = of("reminder");
-  if (reminders.length) lines.push(`${reminders.length} reminders sent`);
+  if (reminders.length) lines.push(id ? `${reminders.length} pengingat dikirim` : `${reminders.length} reminders sent`);
   const fees = of("late_fee");
-  if (fees.length) lines.push(`${fees.length} late fee${fees.length > 1 ? "s" : ""} of ${rupiah(fees[0]!.amount ?? 0)}`);
+  const fee = rupiah(fees[0]?.amount ?? 0, locale);
+  if (fees.length) lines.push(id ? `${fees.length} denda ${fee} ditambahkan` : `${fees.length} late fee${fees.length > 1 ? "s" : ""} of ${fee}`);
   const notices = of("notice");
-  if (notices.length) lines.push(`${notices.length} exit notices sent`);
+  if (notices.length) lines.push(id ? `${notices.length} surat peringatan dikirim` : `${notices.length} exit notices sent`);
   const kpi = of("kpi_alert")[0];
-  if (kpi) lines.push(`${juta(kpi.amount ?? 0)} collected by the 15th, owner alerted`);
+  if (kpi)
+    lines.push(
+      id
+        ? `${juta(kpi.amount ?? 0, locale)} terkumpul sampai tanggal ${Number(kpi.date.slice(8, 10))}, kamu sudah dikabari`
+        : `${juta(kpi.amount ?? 0)} collected by the 15th, owner alerted`,
+    );
   return lines;
 }
 
@@ -91,8 +109,11 @@ export function addDays(date: string, n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-/** "2026-11-15" -> "Nov 15". */
-export function shortDate(date: string): string {
+const BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+
+/** "2026-11-15" -> "Nov 15" ("15 Nov" in Indonesian). */
+export function shortDate(date: string, locale: Locale = "en"): string {
   const d = new Date(`${date}T00:00:00Z`);
+  if (locale === "id") return `${d.getUTCDate()} ${BULAN[d.getUTCMonth()]}`;
   return `${d.toLocaleString("en-US", { month: "short", timeZone: "UTC" })} ${d.getUTCDate()}`;
 }

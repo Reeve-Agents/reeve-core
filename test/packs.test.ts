@@ -7,6 +7,7 @@ import { Rulebook } from "../src/index";
 import mmRulebook from "../fixtures/minimarket/rulebook.json" with { type: "json" };
 import mmSim from "../fixtures/minimarket/sim-events.json" with { type: "json" };
 import { genericPack, minimarketPack, packFor, rentPack } from "../src/packs/index";
+import { juta, rupiah, shortDate } from "../src/simview";
 
 const rb = rulebook as unknown as Rulebook;
 
@@ -79,5 +80,47 @@ describe("generic pack: any SOP, in the rulebook's own words", () => {
     expect(v.exceptions.find((x) => x.needsPasskey)!.text).toContain("Rp3,000,000");
     expect(v.entities.find((e) => e.id === "S07")).toMatchObject({ status: "blocked" });
     expect(v.stats.map((s) => [s.label, s.value])).toEqual([["actions today", "2"], ["waiting for you", "1"], ["blocked", "1"]]);
+  });
+});
+
+describe("packs in Indonesian, for the owner app", () => {
+  it("formats money and dates the Indonesian way", () => {
+    expect(rupiah(1_007_600, "id")).toBe("Rp1.007.600");
+    expect(juta(41_500_000, "id")).toBe("Rp41,5 jt");
+    expect(shortDate("2026-10-15", "id")).toBe("15 Okt");
+    expect(shortDate("2026-11-15")).toBe("Nov 15");
+  });
+
+  it("tells Kos Melati's Nov 15 in Indonesian, with the same numbers", () => {
+    const pack = packFor(rb, "id");
+    expect(pack.entity).toEqual({ one: "Kamar", many: "Kamar" });
+    expect(pack.statuses.notice).toEqual({ label: "surat peringatan", tone: "bad" });
+    const view = pack.view(sim.events, "2026-11-15", rb);
+    expect(view.stats.map((s) => [s.label, s.value])).toEqual([["lunas", "24/30"], ["kena denda", "6"], ["surat peringatan", "6"]]);
+    expect(view.kpis[0]).toMatchObject({ label: "Terkumpul bulan ini", display: "Rp41,5 jt", targetDisplay: "Rp45 jt" });
+    expect(view.lines).toEqual(["6 surat peringatan dikirim", "Rp41,5 jt terkumpul sampai tanggal 15, kamu sudah dikabari"]);
+    expect(view.exceptions[0]?.options).toContain("Kirim pengingat sekarang");
+    expect(view.entities.find((e) => e.id === "K22")).toMatchObject({ status: "notice", flags: ["denda"] });
+  });
+
+  it("tells the minimarket run in Indonesian", () => {
+    const mm = mmRulebook as unknown as Rulebook;
+    const view = packFor(mm, "id").view(mmSim.events, "2026-11-02", mm);
+    expect(view.lines[0]).toBe("30 unit terjual, Rp315.200");
+    expect(view.lines).toContain("1 pesanan di atas batasmu, menunggu kamu");
+    expect(view.exceptions[0]?.text).toBe("Pesanan 49 × Beras 5kg dari Supplier A senilai Rp3.038.000 di atas batasmu.");
+    expect(view.entities.find((e) => e.id === "S03")?.flags).toEqual(["diskon 20%"]);
+    expect(view.entities.find((e) => e.id === "S09")?.flags).toContain("menunggu persetujuanmu");
+  });
+
+  it("keeps the generic pack in the rulebook's nouns, with Indonesian around them", () => {
+    const g = Rulebook.parse(JSON.parse(readFileSync(fileURLToPath(new URL("../fixtures/bimbel-cerdas/rulebook.json", import.meta.url)), "utf8")));
+    const pack = packFor(g, "id");
+    expect(pack.entity).toEqual({ one: "Siswa", many: "Siswa" });
+    expect(pack.statuses.blocked?.label).toBe("ditahan aturan larangan");
+    const v = pack.view([{ date: "2026-11-02", tenant_id: "S01", type: "action", rule: "R1" } as never], "2026-11-02", g);
+    expect(v.lines[0]).toMatch(/: 1 kali$/);
+    expect(v.entities[0]?.detail).toMatch(/^Terakhir: .*, 2 Nov\.$/);
+    expect(v.stats.map((s) => s.label)).toEqual(["aksi hari ini", "menunggu kamu", "ditahan"]);
   });
 });

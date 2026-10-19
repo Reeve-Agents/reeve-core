@@ -14,6 +14,9 @@ npm test
 Entry points: `@reeve/core`, `@reeve/core/packs`, `@reeve/core/simview`, `@reeve/core/revision`,
 `@reeve/core/fixtures-dir` (Node only) and `@reeve/core/fixtures/<business>/<file>`.
 
+Pack views speak English by default (developer studio, landing page) or Indonesian for the owner app:
+`packFor(rulebook, "id")`, `dayLines(events, date, "id")`, `rupiah(n, "id")`, `shortDate(date, "id")`.
+
 ## The Reeve repos
 
 | Repo | What it holds |

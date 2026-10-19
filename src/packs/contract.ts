@@ -1,5 +1,7 @@
 import type { Rulebook } from "../index";
-import type { SimEventLike } from "../simview";
+import type { Locale, SimEventLike } from "../simview";
+
+export type { Locale };
 
 /*
  * A domain pack is everything that changes when Reeve moves from one kind of SOP to another
@@ -66,6 +68,15 @@ export interface PackView {
   exceptions: PackException[];
 }
 
+/** A pack's fixed words in another language; anything left out stays English. */
+export interface PackWords {
+  domain: string;
+  example: string;
+  entity: { one: string; many: string };
+  /** Status label per status key. */
+  statuses: Record<string, string>;
+}
+
 export interface DomainPack {
   id: string;
   /** "Rent collection", "Stock and expiry", ... */
@@ -82,5 +93,8 @@ export interface DomainPack {
   egress: string[];
   /** Days on which anything happened, in order. */
   days(events: SimEventLike[]): string[];
-  view(events: SimEventLike[], date: string, rulebook?: Rulebook): PackView;
+  /** The view in `locale` ("en" when left out). */
+  view(events: SimEventLike[], date: string, rulebook?: Rulebook, locale?: Locale): PackView;
+  /** The fixed words above in other languages (see inLocale). */
+  words?: Partial<Record<Exclude<Locale, "en">, PackWords>>;
 }
