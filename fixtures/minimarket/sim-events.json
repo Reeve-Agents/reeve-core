@@ -1,7 +1,7 @@
 {
-"run_id": "smvdjl83a-1",
-"receipt": "5d1fba6fd6fff3e1de3072b33cf7d8cf0ece04a394aeb375b096c629b15d05dd",
-"source": "CreateOS run on 2026-10-18, Minimarket Berkah scenario (24 items, 30 days, two suppliers)",
+"run_id": "run_mwf3h24w",
+"receipt": "081f122ec67fd303d30a5c4f52c110550c56466b32585e26e3e3a14226821e27",
+"source": "CreateOS run on 2026-11-13, Minimarket Berkah scenario (24 items, 30 days, two suppliers)",
 "summary": {
 "sales": 9871200,
 "purchase_orders": 38,
@@ -1947,8 +1947,8 @@
 ],
 "verdict": "pass",
 "mutation": {
-"total": 30,
-"killed": 30
+"total": 67,
+"killed": 67
 },
 "builder_tests": {
 "ran": 8,
@@ -1959,5 +1959,5 @@
 "ran": 10,
 "failed": 0
 },
-"sandbox": "sb-01m570snrebjtmxrrbdzc1cz32"
+"sandbox": "sb-01m7ap89nrex0a8e0zbvywez3t"
 }
